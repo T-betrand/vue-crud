@@ -52,13 +52,13 @@ export default {
     const products = ref([]);
 
     onMounted(async () => {
-      const response = await fetch("http://0.0.0.0:8000/api/products");
+      const response = await fetch("api/products");
       products.value = await response.json();
     });
 
     const del = async (id: number) => {
       if (confirm("Are you sure you want to delete this product")) {
-        await fetch(`http://0.0.0.0:8000/api/products/${id}`, {
+        await fetch(`api/products/${id}`, {
           method: "DELETE",
         });
 

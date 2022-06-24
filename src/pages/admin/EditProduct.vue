@@ -27,7 +27,7 @@ export default {
         const route = useRoute();
 
         onMounted(async () => {
-            const response = await fetch(`http://0.0.0.0:8000/api/products/${route.params.id}`);
+            const response = await fetch(`api/products/${route.params.id}`);
 
             const product = await response.json();
 
@@ -37,7 +37,7 @@ export default {
 
 
         const edit = async () => {
-            await fetch(`http://0.0.0.0:8000/api/products/${route.params.id}`, {
+            await fetch(`api/products/${route.params.id}`, {
                 method: 'PUT',
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify({

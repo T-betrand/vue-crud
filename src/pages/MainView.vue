@@ -49,14 +49,14 @@ export default {
     const products = ref([] as Product[]);
 
     onMounted(async () => {
-      const response = await fetch('http://0.0.0.0:8000/api/products');
+      const response = await fetch('api/products');
 
       products.value = await response.json()
     });
 
 
     const like = async (id: number) => {
-      await fetch(`http://0.0.0.0:8000/api/products/${id}/like`, {
+      await fetch(`api/products/${id}/like`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'}
       });
