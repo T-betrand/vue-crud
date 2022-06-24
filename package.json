@@ -1,6 +1,10 @@
 {
   "name": "vue-crud",
   "version": "0.1.0",
+  "description": "Test for project",
+  "engines": {
+    "node": "16.x"
+  },
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
